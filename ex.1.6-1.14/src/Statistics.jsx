@@ -1,9 +1,12 @@
 const Statistics = (props) => {
   const { good, neutral, bad } = props;
   const sum = good + neutral + bad;
-  const average = sum == 0 ? 0 : (good * 1 + neutral * 0 + bad * -1) / sum;
-  const positive = sum === 0 ? 0 : (good / sum) * 100;
+  const average = (good * 1 + neutral * 0 + bad * -1) / sum;
+  const positive = (good / sum) * 100;
 
+  if (good === 0 && neutral === 0 && bad === 0) {
+    return <h2>No feedback given</h2>;
+  }
   return (
     <ul>
       <li>good {good}</li>
