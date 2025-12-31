@@ -11,15 +11,20 @@ const Statistics = (props) => {
   }
 
   return (
-    <ul>
-      <StatisticLine text="good" value={good} />
-      <StatisticLine text="neutral" value={neutral} />
-      <StatisticLine text="bad" value={bad} />
-      <StatisticLine text="all" value={sum} />
-      <StatisticLine text="average" value={average} />
-      <StatisticLine text="positive" value={positive} />
-      <h3>statistics</h3>
-    </ul>
+    <table>
+      <tbody>
+        <tr>
+          <th>statistics</th>
+        </tr>
+
+        <StatisticLine text="good" value={good} />
+        <StatisticLine text="neutral" value={neutral} />
+        <StatisticLine text="bad" value={bad} />
+        <StatisticLine text="all" value={sum} />
+        <StatisticLine text="average" value={average} />
+        <StatisticLine text="positive" value={positive} />
+      </tbody>
+    </table>
   );
 };
 
