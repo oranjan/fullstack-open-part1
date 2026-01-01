@@ -19,17 +19,24 @@ const App = () => {
   function randomIndexGenerator() {
     setSelected(Math.floor(Math.random() * anecdotes.length));
   }
+
   function handleVote() {
     const updatedVotesArr = [...votes];
     updatedVotesArr[selected] += 1;
     setVotes(updatedVotesArr);
   }
 
+  const mostVotedIndex= votes.indexOf( Math.max(...votes))
+
   return (
     <div>
       <p>{anecdotes[selected]}</p>
-      <button onClick={() => handleVote}>vote</button>
+      <button onClick={handleVote}>vote</button>
       <button onClick={randomIndexGenerator}>next anecdote</button>
+
+      <h3>anaedote with most votes</h3>
+      <p>{anecdotes[mostVotedIndex] }</p>
+      <p> has {votes[mostVotedIndex] } votes</p>
     </div>
   );
 };
