@@ -25,7 +25,7 @@ const App = () => {
     setVotes(updatedVotesArr);
   }
 
-  const mostVotedIndex= votes.indexOf( Math.max(...votes))
+  const mostVotedIndex = votes.indexOf(Math.max(...votes));
   return (
     <div>
       <p>{anecdotes[selected]}</p>
@@ -33,8 +33,8 @@ const App = () => {
       <button onClick={randomIndexGenerator}>next anecdote</button>
 
       <h3>anaedote with most votes</h3>
-      <p>{anecdotes[mostVotedIndex] }</p>
-      <p> has {votes[mostVotedIndex] } votes</p>
+      <p>{anecdotes[mostVotedIndex]}</p>
+      <p> has {votes[mostVotedIndex]} votes</p>
     </div>
   );
 };
